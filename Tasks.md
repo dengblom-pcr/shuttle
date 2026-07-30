@@ -14,6 +14,12 @@
   - [x] Update `NSHumanReadableCopyright` in `Shuttle/Shuttle-Info.plist` (About box reads this) — credit fork maintainer + note based on original
   - [x] Update README for your GitHub remote (install/build links, retain credit to Trevor Fitzgerald / original project)
   - [x] Leave logo / icons unchanged (`shuttle.icns`, `StatusIcon*.png`)
+- [x] Fix host open Finder error -50: only treat `cmd` as URL when it has an explicit scheme (bare `ssh user@host` was incorrectly passed to `NSWorkspace openURL`)
+- [x] Fix Terminal tab AppleScripts: stop using System Events Cmd+T alone (needs Accessibility; failed with 1002 so `cmd` never ran)
+- [x] Fix second-host reuse: `do script … in front window` reuses selected tab; tab mode now Cmd+T when Accessibility allowed, else bare `do script` (new window / Dock-prefer-tabs)
+- [x] Install arm64 build to `/Applications/Shuttle.app` so Accessibility TCC matches the running binary (grant on `/Applications` did not apply to `build/Release/`)
+- [x] Fix tab+extra-window: after UI New Tab, paste+Return into that tab instead of `do script` (which opened a second window for the SSH session)
+- [x] Fix tab+window again: only Cmd+T (no Shell menu click); if tab created, type cmd+Return into it — never `do script` after Cmd+T (that spawned the extra window)
 
 ## Phase 2 — Build & project hygiene
 - [ ] Add Shuttle.xcodeproj/xcshareddata/xcschemes/Shuttle.xcscheme for CLI builds
