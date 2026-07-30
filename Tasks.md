@@ -1,13 +1,19 @@
 # Shuttle Upgrade Tasks
 
 ## Phase 1 — Apple Silicon (minimal)
-- [ ] Fix apple-scripts compile paths to be repo-relative
-- [ ] Regenerate Shuttle/apple-scpt/*.scpt
-- [ ] Restore or recreate missing icon assets (StatusIcon*.png, shuttle.icns)
-- [ ] Set Release ARCHS=arm64 in Xcode project
-- [ ] Build Release on Apple Silicon
-- [ ] Verify `file` shows arm64 and app runs without Rosetta
-- [ ] Smoke test Terminal + iTerm2 AppleScript handlers
+- [x] Fix apple-scripts compile paths to be repo-relative
+- [x] Regenerate Shuttle/apple-scpt/*.scpt (Terminal + Virtual; iTerm needs iTerm2 installed — committed .scpt kept)
+- [x] Restore or recreate missing icon assets (StatusIcon*.png, shuttle.icns)
+- [x] Set Release ARCHS=arm64 in Xcode project
+- [x] Build Release on Apple Silicon (`build/Release/Shuttle.app` — **BUILD SUCCEEDED**)
+- [x] Verify `file` shows arm64 and app runs without Rosetta (`Mach-O 64-bit executable arm64`)
+- [x] Smoke test Terminal + iTerm2 AppleScript handlers (Terminal handler OK — new window ran `echo SHUTTLE_PHASE1_SMOKE_OK`; Automation already granted for `shuttle.Shuttle`; iTerm2 not installed so iTerm handlers skipped)
+- [x] License / attribution for personal GitHub fork (keep open source, free; no logo changes)
+  - [x] Keep MIT `LICENSE` with original `Copyright (c) 2013 Trevor Fitzgerald` notice
+  - [x] Add your copyright line for modifications (`Copyright (c) 2026 David Engblom`)
+  - [x] Update `NSHumanReadableCopyright` in `Shuttle/Shuttle-Info.plist` (About box reads this) — credit fork maintainer + note based on original
+  - [x] Update README for your GitHub remote (install/build links, retain credit to Trevor Fitzgerald / original project)
+  - [x] Leave logo / icons unchanged (`shuttle.icns`, `StatusIcon*.png`)
 
 ## Phase 2 — Build & project hygiene
 - [ ] Add Shuttle.xcodeproj/xcshareddata/xcschemes/Shuttle.xcscheme for CLI builds
