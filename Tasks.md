@@ -22,11 +22,11 @@
 - [x] Fix tab+window again: only Cmd+T (no Shell menu click); if tab created, type cmd+Return into it — never `do script` after Cmd+T (that spawned the extra window)
 
 ## Phase 2 — Build & project hygiene
-- [ ] Add Shuttle.xcodeproj/xcshareddata/xcschemes/Shuttle.xcscheme for CLI builds
-- [ ] Bump MACOSX_DEPLOYMENT_TARGET (10.8/10.9 → 11.0+; Apple Silicon Macs require Big Sur minimum anyway)
-- [ ] Upgrade project format (objectVersion 46 / LastUpgradeCheck 1010 → current Xcode)
-- [ ] Commit generated .scpt and icons OR add a "prepare" build script + document in README
-- [ ] Add basic build instructions to README (replace prebuilt-only install flow)
+- [x] Add Shuttle.xcodeproj/xcshareddata/xcschemes/Shuttle.xcscheme for CLI builds
+- [x] Bump MACOSX_DEPLOYMENT_TARGET (10.8/10.9 → 11.0; Apple Silicon Macs require Big Sur minimum anyway)
+- [x] Upgrade project format (objectVersion 54 / LastUpgradeCheck 2600 / compatibilityVersion Xcode 14.0)
+- [x] Keep committed `.scpt` + icons; add `apple-scripts/prepare.sh` and document in README
+- [x] Add basic build instructions to README (scheme-based `xcodebuild`, prepare script, permissions)
 
 ## Phase 3 — Code signing & distribution
 - [ ] Set DEVELOPMENT_TEAM and CODE_SIGN_IDENTITY (currently empty)
